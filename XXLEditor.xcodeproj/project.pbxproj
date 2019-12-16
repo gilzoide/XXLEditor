@@ -55,9 +55,8 @@
 		2B8BB7F023A110570026A86C = {
 			isa = PBXGroup;
 			children = (
-				2B914D1523A6FD2D0075164B /* ExampleViews */,
-				2BA0883A23A1D343005964CB /* XXL */,
 				2B8BB7FB23A110570026A86C /* XXLEditor */,
+				2B914D1523A6FD2D0075164B /* ExampleViews */,
 				2B8BB7FA23A110570026A86C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,6 +81,7 @@
 				2B8BB80A23A110580026A86C /* Info.plist */,
 				2BB18D6D23A664E5007C3F7C /* VisualizerView.swift */,
 				2BB18D6A23A6641A007C3F7C /* VisualizerViewController.swift */,
+				2BA0883A23A1D343005964CB /* Descriptors */,
 			);
 			path = XXLEditor;
 			sourceTree = "<group>";
@@ -94,7 +94,7 @@
 			path = ExampleViews;
 			sourceTree = "<group>";
 		};
-		2BA0883A23A1D343005964CB /* XXL */ = {
+		2BA0883A23A1D343005964CB /* Descriptors */ = {
 			isa = PBXGroup;
 			children = (
 				2BBD7C2823A25A680065F65C /* XXLEditor-Bridging-Header.h */,
@@ -105,7 +105,7 @@
 				2B914D1B23A70C0E0075164B /* UIColor+Selector.h */,
 				2B914D1C23A70C0E0075164B /* UIColor+Selector.m */,
 			);
-			path = XXL;
+			path = Descriptors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,12 +263,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -317,11 +318,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -345,7 +347,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gilzoide.xxleditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "XXL/XXLEditor-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "XXLEditor/Descriptors/XXLEditor-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -370,7 +372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gilzoide.xxleditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "XXL/XXLEditor-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "XXLEditor/Descriptors/XXLEditor-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
