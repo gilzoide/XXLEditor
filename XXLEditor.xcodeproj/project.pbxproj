@@ -7,24 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B38663523A6828A0057280D /* ViewDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38663423A6828A0057280D /* ViewDescriptor.m */; };
 		2B8BB7FD23A110570026A86C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BB7FC23A110570026A86C /* AppDelegate.swift */; };
 		2B8BB7FF23A110570026A86C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BB7FE23A110570026A86C /* SceneDelegate.swift */; };
-		2B8BB80123A110570026A86C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BB80023A110570026A86C /* ViewController.swift */; };
 		2B8BB80423A110570026A86C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B8BB80223A110570026A86C /* Main.storyboard */; };
 		2B8BB80623A110580026A86C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B8BB80523A110580026A86C /* Assets.xcassets */; };
 		2B8BB80923A110580026A86C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B8BB80723A110580026A86C /* LaunchScreen.storyboard */; };
+		2B914D1723A6FD530075164B /* SimpleRoundedView.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B914D1623A6FD530075164B /* SimpleRoundedView.plist */; };
+		2B914D1923A7008A0075164B /* DescriptorSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B914D1823A7008A0075164B /* DescriptorSerializer.swift */; };
+		2B914D1D23A70C0E0075164B /* UIColor+Selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B914D1C23A70C0E0075164B /* UIColor+Selector.m */; };
+		2BB18D6B23A6641A007C3F7C /* VisualizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB18D6A23A6641A007C3F7C /* VisualizerViewController.swift */; };
+		2BB18D6E23A664E5007C3F7C /* VisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB18D6D23A664E5007C3F7C /* VisualizerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B38663023A681740057280D /* Datatype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Datatype.h; sourceTree = "<group>"; };
+		2B38663323A6828A0057280D /* ViewDescriptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewDescriptor.h; sourceTree = "<group>"; };
+		2B38663423A6828A0057280D /* ViewDescriptor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewDescriptor.m; sourceTree = "<group>"; };
 		2B8BB7F923A110570026A86C /* XXLEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XXLEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8BB7FC23A110570026A86C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B8BB7FE23A110570026A86C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2B8BB80023A110570026A86C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B8BB80323A110570026A86C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B8BB80523A110580026A86C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B8BB80823A110580026A86C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B8BB80A23A110580026A86C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B8BB81023A110640026A86C /* XXLEditor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XXLEditor.entitlements; sourceTree = "<group>"; };
+		2B914D1623A6FD530075164B /* SimpleRoundedView.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SimpleRoundedView.plist; sourceTree = "<group>"; };
+		2B914D1823A7008A0075164B /* DescriptorSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptorSerializer.swift; sourceTree = "<group>"; };
+		2B914D1B23A70C0E0075164B /* UIColor+Selector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Selector.h"; sourceTree = "<group>"; };
+		2B914D1C23A70C0E0075164B /* UIColor+Selector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Selector.m"; sourceTree = "<group>"; };
+		2BB18D6A23A6641A007C3F7C /* VisualizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerViewController.swift; sourceTree = "<group>"; };
+		2BB18D6D23A664E5007C3F7C /* VisualizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerView.swift; sourceTree = "<group>"; };
+		2BBD7C2823A25A680065F65C /* XXLEditor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XXLEditor-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +55,8 @@
 		2B8BB7F023A110570026A86C = {
 			isa = PBXGroup;
 			children = (
+				2B914D1523A6FD2D0075164B /* ExampleViews */,
+				2BA0883A23A1D343005964CB /* XXL */,
 				2B8BB7FB23A110570026A86C /* XXLEditor */,
 				2B8BB7FA23A110570026A86C /* Products */,
 			);
@@ -60,13 +76,36 @@
 				2B8BB81023A110640026A86C /* XXLEditor.entitlements */,
 				2B8BB7FC23A110570026A86C /* AppDelegate.swift */,
 				2B8BB7FE23A110570026A86C /* SceneDelegate.swift */,
-				2B8BB80023A110570026A86C /* ViewController.swift */,
 				2B8BB80223A110570026A86C /* Main.storyboard */,
 				2B8BB80523A110580026A86C /* Assets.xcassets */,
 				2B8BB80723A110580026A86C /* LaunchScreen.storyboard */,
 				2B8BB80A23A110580026A86C /* Info.plist */,
+				2BB18D6D23A664E5007C3F7C /* VisualizerView.swift */,
+				2BB18D6A23A6641A007C3F7C /* VisualizerViewController.swift */,
 			);
 			path = XXLEditor;
+			sourceTree = "<group>";
+		};
+		2B914D1523A6FD2D0075164B /* ExampleViews */ = {
+			isa = PBXGroup;
+			children = (
+				2B914D1623A6FD530075164B /* SimpleRoundedView.plist */,
+			);
+			path = ExampleViews;
+			sourceTree = "<group>";
+		};
+		2BA0883A23A1D343005964CB /* XXL */ = {
+			isa = PBXGroup;
+			children = (
+				2BBD7C2823A25A680065F65C /* XXLEditor-Bridging-Header.h */,
+				2B38663023A681740057280D /* Datatype.h */,
+				2B38663323A6828A0057280D /* ViewDescriptor.h */,
+				2B38663423A6828A0057280D /* ViewDescriptor.m */,
+				2B914D1823A7008A0075164B /* DescriptorSerializer.swift */,
+				2B914D1B23A70C0E0075164B /* UIColor+Selector.h */,
+				2B914D1C23A70C0E0075164B /* UIColor+Selector.m */,
+			);
+			path = XXL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -101,6 +140,7 @@
 				TargetAttributes = {
 					2B8BB7F823A110570026A86C = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -130,6 +170,7 @@
 				2B8BB80923A110580026A86C /* LaunchScreen.storyboard in Resources */,
 				2B8BB80623A110580026A86C /* Assets.xcassets in Resources */,
 				2B8BB80423A110570026A86C /* Main.storyboard in Resources */,
+				2B914D1723A6FD530075164B /* SimpleRoundedView.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,9 +181,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B8BB80123A110570026A86C /* ViewController.swift in Sources */,
+				2BB18D6B23A6641A007C3F7C /* VisualizerViewController.swift in Sources */,
 				2B8BB7FD23A110570026A86C /* AppDelegate.swift in Sources */,
+				2BB18D6E23A664E5007C3F7C /* VisualizerView.swift in Sources */,
 				2B8BB7FF23A110570026A86C /* SceneDelegate.swift in Sources */,
+				2B914D1923A7008A0075164B /* DescriptorSerializer.swift in Sources */,
+				2B914D1D23A70C0E0075164B /* UIColor+Selector.m in Sources */,
+				2B38663523A6828A0057280D /* ViewDescriptor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +331,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = XXLEditor/XXLEditor.entitlements;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +345,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gilzoide.xxleditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "XXL/XXLEditor-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -308,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = XXLEditor/XXLEditor.entitlements;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -321,6 +370,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gilzoide.xxleditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "XXL/XXLEditor-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
