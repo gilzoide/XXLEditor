@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B38663523A6828A0057280D /* ViewDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38663423A6828A0057280D /* ViewDescriptor.m */; };
+		2B52B73823A8FA7900B4C7A3 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B52B73723A8FA7900B4C7A3 /* Property.swift */; };
+		2B52B73A23A8FBAD00B4C7A3 /* ViewDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B52B73923A8FBAD00B4C7A3 /* ViewDescriptor.swift */; };
+		2B52B73C23A900CE00B4C7A3 /* Datatype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B52B73B23A900CE00B4C7A3 /* Datatype.swift */; };
+		2B52B73F23A9036900B4C7A3 /* Descriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B52B73E23A9036900B4C7A3 /* Descriptor.swift */; };
 		2B8BB7FD23A110570026A86C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BB7FC23A110570026A86C /* AppDelegate.swift */; };
 		2B8BB7FF23A110570026A86C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BB7FE23A110570026A86C /* SceneDelegate.swift */; };
 		2B8BB80423A110570026A86C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B8BB80223A110570026A86C /* Main.storyboard */; };
@@ -21,9 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B38663023A681740057280D /* Datatype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Datatype.h; sourceTree = "<group>"; };
-		2B38663323A6828A0057280D /* ViewDescriptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewDescriptor.h; sourceTree = "<group>"; };
-		2B38663423A6828A0057280D /* ViewDescriptor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewDescriptor.m; sourceTree = "<group>"; };
+		2B52B73723A8FA7900B4C7A3 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		2B52B73923A8FBAD00B4C7A3 /* ViewDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDescriptor.swift; sourceTree = "<group>"; };
+		2B52B73B23A900CE00B4C7A3 /* Datatype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datatype.swift; sourceTree = "<group>"; };
+		2B52B73E23A9036900B4C7A3 /* Descriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptor.swift; sourceTree = "<group>"; };
 		2B8BB7F923A110570026A86C /* XXLEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XXLEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8BB7FC23A110570026A86C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B8BB7FE23A110570026A86C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B52B73D23A9031900B4C7A3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2B914D1B23A70C0E0075164B /* UIColor+Selector.h */,
+				2B914D1C23A70C0E0075164B /* UIColor+Selector.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		2B8BB7F023A110570026A86C = {
 			isa = PBXGroup;
 			children = (
@@ -81,7 +94,10 @@
 				2B8BB80A23A110580026A86C /* Info.plist */,
 				2BB18D6D23A664E5007C3F7C /* VisualizerView.swift */,
 				2BB18D6A23A6641A007C3F7C /* VisualizerViewController.swift */,
+				2BBD7C2823A25A680065F65C /* XXLEditor-Bridging-Header.h */,
+				2B52B73D23A9031900B4C7A3 /* Utils */,
 				2BA0883A23A1D343005964CB /* Descriptors */,
+				2BDA6AEE23A85E95005A892D /* EditorViews */,
 			);
 			path = XXLEditor;
 			sourceTree = "<group>";
@@ -97,15 +113,20 @@
 		2BA0883A23A1D343005964CB /* Descriptors */ = {
 			isa = PBXGroup;
 			children = (
-				2BBD7C2823A25A680065F65C /* XXLEditor-Bridging-Header.h */,
-				2B38663023A681740057280D /* Datatype.h */,
-				2B38663323A6828A0057280D /* ViewDescriptor.h */,
-				2B38663423A6828A0057280D /* ViewDescriptor.m */,
+				2B52B73B23A900CE00B4C7A3 /* Datatype.swift */,
+				2B52B73E23A9036900B4C7A3 /* Descriptor.swift */,
 				2B914D1823A7008A0075164B /* DescriptorSerializer.swift */,
-				2B914D1B23A70C0E0075164B /* UIColor+Selector.h */,
-				2B914D1C23A70C0E0075164B /* UIColor+Selector.m */,
+				2B52B73723A8FA7900B4C7A3 /* Property.swift */,
+				2B52B73923A8FBAD00B4C7A3 /* ViewDescriptor.swift */,
 			);
 			path = Descriptors;
+			sourceTree = "<group>";
+		};
+		2BDA6AEE23A85E95005A892D /* EditorViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EditorViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,13 +202,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B52B73C23A900CE00B4C7A3 /* Datatype.swift in Sources */,
 				2BB18D6B23A6641A007C3F7C /* VisualizerViewController.swift in Sources */,
+				2B52B73F23A9036900B4C7A3 /* Descriptor.swift in Sources */,
 				2B8BB7FD23A110570026A86C /* AppDelegate.swift in Sources */,
 				2BB18D6E23A664E5007C3F7C /* VisualizerView.swift in Sources */,
 				2B8BB7FF23A110570026A86C /* SceneDelegate.swift in Sources */,
 				2B914D1923A7008A0075164B /* DescriptorSerializer.swift in Sources */,
 				2B914D1D23A70C0E0075164B /* UIColor+Selector.m in Sources */,
-				2B38663523A6828A0057280D /* ViewDescriptor.m in Sources */,
+				2B52B73823A8FA7900B4C7A3 /* Property.swift in Sources */,
+				2B52B73A23A8FBAD00B4C7A3 /* ViewDescriptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +371,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gilzoide.xxleditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "XXLEditor/Descriptors/XXLEditor-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "XXLEditor/XXLEditor-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -372,7 +396,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gilzoide.xxleditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "XXLEditor/Descriptors/XXLEditor-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "XXLEditor/XXLEditor-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

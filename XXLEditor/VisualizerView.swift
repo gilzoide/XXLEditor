@@ -9,7 +9,7 @@
 import UIKit
 
 class VisualizerView: UIView {
-    var scrollView = UIScrollView()
+    private var scrollView = UIScrollView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,14 +29,14 @@ class VisualizerView: UIView {
         addSubview(scrollView)
     }
     
-    @IBInspectable var shownView: String? {
+    var descriptor: ViewDescriptor? {
         willSet {
             scrollView.subviews.forEach { $0.removeFromSuperview() }
+            
         }
         didSet {
-            if let shownView = shownView, let descriptor = DescriptorSerializer.descriptorFromFile(filePath: shownView) {
-                let view = descriptor.instantiate()
-                scrollView.addSubview(view)
+            if let descriptor = descriptor {
+                scrollView.addSubview(descriptor.view)
             }
         }
     }

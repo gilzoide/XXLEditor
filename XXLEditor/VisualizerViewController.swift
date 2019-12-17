@@ -9,7 +9,22 @@
 import UIKit
 
 class VisualizerViewController: UIViewController {
-    @IBOutlet weak var visualizer: VisualizerView!
+    @IBInspectable var filePath: String? {
+        didSet {
+            if let filePath = filePath, let descriptor = DescriptorSerializer.descriptorFromFile(filePath: filePath) {
+                loadViewIfNeeded()
+                visualizer.descriptor = descriptor
+            }
+        }
+    }
+    
+    private weak var visualizer: VisualizerView!
+    
+    override func loadView() {
+        let view = VisualizerView()
+        visualizer = view
+        self.view = view
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
