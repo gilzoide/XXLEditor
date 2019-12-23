@@ -11,7 +11,7 @@ import Foundation
 private let NSValueStart = Datatype.bool.rawValue
 private let NSValueEnd = Datatype.transform.rawValue
 
-enum Datatype : Int {
+enum Datatype : Int, Codable {
     case bool
     case int
     case float
@@ -34,5 +34,9 @@ enum Datatype : Int {
     
     func isColor() -> Bool {
         return self == .color
+    }
+    
+    public var editorIdentifier: String {
+        return "\(self)Editor"
     }
 }

@@ -11,6 +11,13 @@
 		2B52B73A23A8FBAD00B4C7A3 /* ViewDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B52B73923A8FBAD00B4C7A3 /* ViewDescriptor.swift */; };
 		2B52B73C23A900CE00B4C7A3 /* Datatype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B52B73B23A900CE00B4C7A3 /* Datatype.swift */; };
 		2B52B73F23A9036900B4C7A3 /* Descriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B52B73E23A9036900B4C7A3 /* Descriptor.swift */; };
+		2B83B8F323AA4CF300CF01A3 /* PropertyEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B83B8F223AA4CF300CF01A3 /* PropertyEditorCell.swift */; };
+		2B880B6D23B0F9C200E26362 /* InspectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B880B6B23B0F9C200E26362 /* InspectorViewController.swift */; };
+		2B880B7023B0FBEA00E26362 /* Editor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B880B6F23B0FBEA00E26362 /* Editor.storyboard */; };
+		2B880B7223B0FE7500E26362 /* IntPropertyEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B880B7123B0FE7500E26362 /* IntPropertyEditorCell.swift */; };
+		2B880B7423B1083C00E26362 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B880B7323B1083C00E26362 /* EditorViewController.swift */; };
+		2B880B7623B10BAD00E26362 /* Optional+Wrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B880B7523B10BAD00E26362 /* Optional+Wrapped.swift */; };
+		2B880B7823B1108600E26362 /* Array+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B880B7723B1108600E26362 /* Array+Safe.swift */; };
 		2B8BB7FD23A110570026A86C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BB7FC23A110570026A86C /* AppDelegate.swift */; };
 		2B8BB7FF23A110570026A86C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BB7FE23A110570026A86C /* SceneDelegate.swift */; };
 		2B8BB80423A110570026A86C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B8BB80223A110570026A86C /* Main.storyboard */; };
@@ -28,6 +35,13 @@
 		2B52B73923A8FBAD00B4C7A3 /* ViewDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDescriptor.swift; sourceTree = "<group>"; };
 		2B52B73B23A900CE00B4C7A3 /* Datatype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datatype.swift; sourceTree = "<group>"; };
 		2B52B73E23A9036900B4C7A3 /* Descriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptor.swift; sourceTree = "<group>"; };
+		2B83B8F223AA4CF300CF01A3 /* PropertyEditorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyEditorCell.swift; sourceTree = "<group>"; };
+		2B880B6B23B0F9C200E26362 /* InspectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorViewController.swift; sourceTree = "<group>"; };
+		2B880B6F23B0FBEA00E26362 /* Editor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Editor.storyboard; sourceTree = "<group>"; };
+		2B880B7123B0FE7500E26362 /* IntPropertyEditorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntPropertyEditorCell.swift; sourceTree = "<group>"; };
+		2B880B7323B1083C00E26362 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
+		2B880B7523B10BAD00E26362 /* Optional+Wrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Wrapped.swift"; sourceTree = "<group>"; };
+		2B880B7723B1108600E26362 /* Array+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Safe.swift"; sourceTree = "<group>"; };
 		2B8BB7F923A110570026A86C /* XXLEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XXLEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8BB7FC23A110570026A86C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B8BB7FE23A110570026A86C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +73,8 @@
 		2B52B73D23A9031900B4C7A3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2B880B7723B1108600E26362 /* Array+Safe.swift */,
+				2B880B7523B10BAD00E26362 /* Optional+Wrapped.swift */,
 				2B914D1B23A70C0E0075164B /* UIColor+Selector.h */,
 				2B914D1C23A70C0E0075164B /* UIColor+Selector.m */,
 			);
@@ -125,6 +141,11 @@
 		2BDA6AEE23A85E95005A892D /* EditorViews */ = {
 			isa = PBXGroup;
 			children = (
+				2B880B6F23B0FBEA00E26362 /* Editor.storyboard */,
+				2B880B7323B1083C00E26362 /* EditorViewController.swift */,
+				2B880B6B23B0F9C200E26362 /* InspectorViewController.swift */,
+				2B880B7123B0FE7500E26362 /* IntPropertyEditorCell.swift */,
+				2B83B8F223AA4CF300CF01A3 /* PropertyEditorCell.swift */,
 			);
 			path = EditorViews;
 			sourceTree = "<group>";
@@ -189,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B8BB80923A110580026A86C /* LaunchScreen.storyboard in Resources */,
+				2B880B7023B0FBEA00E26362 /* Editor.storyboard in Resources */,
 				2B8BB80623A110580026A86C /* Assets.xcassets in Resources */,
 				2B8BB80423A110570026A86C /* Main.storyboard in Resources */,
 				2B914D1723A6FD530075164B /* SimpleRoundedView.plist in Resources */,
@@ -202,16 +224,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B83B8F323AA4CF300CF01A3 /* PropertyEditorCell.swift in Sources */,
 				2B52B73C23A900CE00B4C7A3 /* Datatype.swift in Sources */,
 				2BB18D6B23A6641A007C3F7C /* VisualizerViewController.swift in Sources */,
 				2B52B73F23A9036900B4C7A3 /* Descriptor.swift in Sources */,
+				2B880B7823B1108600E26362 /* Array+Safe.swift in Sources */,
 				2B8BB7FD23A110570026A86C /* AppDelegate.swift in Sources */,
 				2BB18D6E23A664E5007C3F7C /* VisualizerView.swift in Sources */,
 				2B8BB7FF23A110570026A86C /* SceneDelegate.swift in Sources */,
 				2B914D1923A7008A0075164B /* DescriptorSerializer.swift in Sources */,
+				2B880B6D23B0F9C200E26362 /* InspectorViewController.swift in Sources */,
+				2B880B7223B0FE7500E26362 /* IntPropertyEditorCell.swift in Sources */,
+				2B880B7623B10BAD00E26362 /* Optional+Wrapped.swift in Sources */,
 				2B914D1D23A70C0E0075164B /* UIColor+Selector.m in Sources */,
 				2B52B73823A8FA7900B4C7A3 /* Property.swift in Sources */,
 				2B52B73A23A8FBAD00B4C7A3 /* ViewDescriptor.swift in Sources */,
+				2B880B7423B1083C00E26362 /* EditorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,12 +9,10 @@
 import UIKit
 
 class VisualizerViewController: UIViewController {
-    @IBInspectable var filePath: String? {
+    var descriptor: ViewDescriptor? {
         didSet {
-            if let filePath = filePath, let descriptor = DescriptorSerializer.descriptorFromFile(filePath: filePath) {
-                loadViewIfNeeded()
-                visualizer.descriptor = descriptor
-            }
+            loadViewIfNeeded()
+            visualizer.descriptor = descriptor
         }
     }
     

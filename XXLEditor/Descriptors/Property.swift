@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Property {
+struct Property: Codable {
     var keyPath: String
     var type: Datatype
     

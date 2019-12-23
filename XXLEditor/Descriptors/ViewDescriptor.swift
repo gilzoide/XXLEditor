@@ -8,22 +8,23 @@
 
 import Foundation
 
-
-private let _declaredProperties: [String: Property] = {
-    let properties = [
-        Property(keyPath: "tag", type: Datatype.int),
-        Property(keyPath: "frame", type: Datatype.rect),
-        Property(keyPath: "backgroundColor", type: Datatype.color),
-        Property(keyPath: "layer.cornerRadius", type: Datatype.float),
-    ]
-    
-    return properties.reduce(into: [:]) { (dict, p) in
+private let _declaredPropertyList: DeclaredPropertyList = [
+    Property(keyPath: "tag", type: Datatype.int),
+    Property(keyPath: "frame", type: Datatype.rect),
+    Property(keyPath: "backgroundColor", type: Datatype.color),
+    Property(keyPath: "layer.cornerRadius", type: Datatype.float),
+]
+private let _declaredProperties: DeclaredProperties = {
+    return _declaredPropertyList.reduce(into: [:]) { (dict, p) in
         dict[p.keyPath] = p
     }
 }()
 
 class ViewDescriptor : Descriptor {
-    override class var declaredProperties: [String: Property] {
+    override class var declaredPropertyList: DeclaredPropertyList {
+        return _declaredPropertyList
+    }
+    override class var declaredProperties: DeclaredProperties {
         return _declaredProperties
     }
     

@@ -8,11 +8,19 @@
 
 import Foundation
 
-private let _declaredProperties: [String: Property] = [:]
+typealias DeclaredPropertyList = [Property]
+typealias DeclaredProperties = [String: Property]
+
+private let _declaredPropertyList: DeclaredPropertyList = []
+private let _declaredProperties: DeclaredProperties = [:]
 
 class Descriptor {
-    /// To be overrided as appropriate
-    class var declaredProperties: [String: Property] {
+    /// To be overriden as appropriate
+    class var declaredPropertyList: DeclaredPropertyList {
+        return _declaredPropertyList
+    }
+    /// To be overriden as appropriate
+    class var declaredProperties: DeclaredProperties {
         return _declaredProperties
     }
     
