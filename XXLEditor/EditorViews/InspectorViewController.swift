@@ -62,6 +62,19 @@ class InspectorViewController: UITableViewController, PropertyEditorCellDelegate
         return cell
     }
     
+    var heightCache: [String: CGFloat] = [:]
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let identifier = propertyFor(indexPath: indexPath).type.editorIdentifier
+        if let height = heightCache[identifier] {
+            return height
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier)
+        let height = cell?.bounds.height ?? tableView.rowHeight
+        heightCache[identifier] = height
+        return height
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
