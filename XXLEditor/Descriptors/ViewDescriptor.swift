@@ -12,6 +12,7 @@ private let _declaredPropertyList: DeclaredPropertyList = [
     Property(keyPath: "tag", type: Datatype.int),
     Property(keyPath: "frame", type: Datatype.rect),
     Property(keyPath: "backgroundColor", type: Datatype.color),
+    Property(keyPath: "hidden", type: Datatype.bool),
     Property(keyPath: "layer.cornerRadius", type: Datatype.float),
 ]
 private let _declaredProperties: DeclaredProperties = {

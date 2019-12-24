@@ -27,7 +27,7 @@ class NumericPropertyEditorCell: PropertyEditorCell {
     
     override func valueDidSet() {
         if let value = value as? Double {
-            let fmt = property?.type == .int ? "%.0f" : "%.1f"
+            let fmt = property?.type == .int ? "%.0f" : "%g"
             textField.text = String(format: fmt, value)
             stepper.value = value
         }

@@ -42,13 +42,41 @@
         <scene sceneID="EaI-MW-AY5">
             <objects>
                 <tableViewController id="J4Z-x9-QLV" customClass="InspectorViewController" customModule="XXLEditor" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nl7-Hx-Tqd">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nl7-Hx-Tqd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="intEditor" id="sp2-50-jai" customClass="NumericPropertyEditorCell" customModule="XXLEditor" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="boolEditor" id="APH-Yo-sFY" customClass="BoolPropertyEditorCell" customModule="XXLEditor" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="APH-Yo-sFY" id="iHO-0q-97J">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Bool Property" textAlignment="right" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" id="Q3q-E1-exW">
+                                            <rect key="frame" x="20" y="14" width="130" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CXb-fc-6ng">
+                                            <rect key="frame" x="160" y="6" width="49" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="switchValueChanged:" destination="APH-Yo-sFY" eventType="valueChanged" id="xjU-ef-qo4"/>
+                                            </connections>
+                                        </switch>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="switchView" destination="CXb-fc-6ng" id="6cq-eD-8W8"/>
+                                    <outlet property="titleLabel" destination="Q3q-E1-exW" id="fEH-Pp-YDA"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="intEditor" id="sp2-50-jai" customClass="NumericPropertyEditorCell" customModule="XXLEditor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sp2-50-jai" id="kmQ-gX-Axz">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -86,7 +114,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="floatEditor" id="xxL-Zy-juO" customClass="NumericPropertyEditorCell" customModule="XXLEditor" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="115" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xxL-Zy-juO" id="fS6-gE-DLu">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -124,7 +152,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rectEditor" rowHeight="85" id="13J-B5-HD8" customClass="RectPropertyEditorCell" customModule="XXLEditor" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="115" width="414" height="85"/>
+                                <rect key="frame" x="0.0" y="158.5" width="414" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="13J-B5-HD8" id="EhY-iE-wXi">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
@@ -212,7 +240,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stringEditor" id="7wD-1W-ha4" customClass="PropertyEditorCell" customModule="XXLEditor" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="200" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="243.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7wD-1W-ha4" id="Wb7-vo-Efu">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -242,7 +270,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="colorEditor" id="0gF-gL-hbG" customClass="PropertyEditorCell" customModule="XXLEditor" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="243.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="287" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0gF-gL-hbG" id="Erj-Gw-tB1">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>

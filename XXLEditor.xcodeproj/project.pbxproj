@@ -29,6 +29,7 @@
 		2BB18D6B23A6641A007C3F7C /* VisualizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB18D6A23A6641A007C3F7C /* VisualizerViewController.swift */; };
 		2BB18D6E23A664E5007C3F7C /* VisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB18D6D23A664E5007C3F7C /* VisualizerView.swift */; };
 		2BEBBFFA23B247C000D34285 /* RectPropertyEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBBFF923B247C000D34285 /* RectPropertyEditorCell.swift */; };
+		2BEBBFFC23B2504100D34285 /* BoolPropertyEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBBFFB23B2504100D34285 /* BoolPropertyEditorCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		2BB18D6D23A664E5007C3F7C /* VisualizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerView.swift; sourceTree = "<group>"; };
 		2BBD7C2823A25A680065F65C /* XXLEditor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XXLEditor-Bridging-Header.h"; sourceTree = "<group>"; };
 		2BEBBFF923B247C000D34285 /* RectPropertyEditorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectPropertyEditorCell.swift; sourceTree = "<group>"; };
+		2BEBBFFB23B2504100D34285 /* BoolPropertyEditorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolPropertyEditorCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				2B880B7123B0FE7500E26362 /* NumericPropertyEditorCell.swift */,
 				2B83B8F223AA4CF300CF01A3 /* PropertyEditorCell.swift */,
 				2BEBBFF923B247C000D34285 /* RectPropertyEditorCell.swift */,
+				2BEBBFFB23B2504100D34285 /* BoolPropertyEditorCell.swift */,
 			);
 			path = EditorViews;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				2B52B73C23A900CE00B4C7A3 /* Datatype.swift in Sources */,
 				2BB18D6B23A6641A007C3F7C /* VisualizerViewController.swift in Sources */,
 				2B52B73F23A9036900B4C7A3 /* Descriptor.swift in Sources */,
+				2BEBBFFC23B2504100D34285 /* BoolPropertyEditorCell.swift in Sources */,
 				2B880B7823B1108600E26362 /* Array+Safe.swift in Sources */,
 				2B8BB7FD23A110570026A86C /* AppDelegate.swift in Sources */,
 				2BB18D6E23A664E5007C3F7C /* VisualizerView.swift in Sources */,
