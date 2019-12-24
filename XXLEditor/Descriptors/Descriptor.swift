@@ -36,4 +36,7 @@ class Descriptor {
         }
         return valid
     }
+    func property(_ keyPath: String) -> Any? {
+        return _properties[keyPath]
+    }
 }

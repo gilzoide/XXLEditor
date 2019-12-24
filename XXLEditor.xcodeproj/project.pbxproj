@@ -14,7 +14,7 @@
 		2B83B8F323AA4CF300CF01A3 /* PropertyEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B83B8F223AA4CF300CF01A3 /* PropertyEditorCell.swift */; };
 		2B880B6D23B0F9C200E26362 /* InspectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B880B6B23B0F9C200E26362 /* InspectorViewController.swift */; };
 		2B880B7023B0FBEA00E26362 /* Editor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B880B6F23B0FBEA00E26362 /* Editor.storyboard */; };
-		2B880B7223B0FE7500E26362 /* IntPropertyEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B880B7123B0FE7500E26362 /* IntPropertyEditorCell.swift */; };
+		2B880B7223B0FE7500E26362 /* NumericPropertyEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B880B7123B0FE7500E26362 /* NumericPropertyEditorCell.swift */; };
 		2B880B7423B1083C00E26362 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B880B7323B1083C00E26362 /* EditorViewController.swift */; };
 		2B880B7623B10BAD00E26362 /* Optional+Wrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B880B7523B10BAD00E26362 /* Optional+Wrapped.swift */; };
 		2B880B7823B1108600E26362 /* Array+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B880B7723B1108600E26362 /* Array+Safe.swift */; };
@@ -38,7 +38,7 @@
 		2B83B8F223AA4CF300CF01A3 /* PropertyEditorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyEditorCell.swift; sourceTree = "<group>"; };
 		2B880B6B23B0F9C200E26362 /* InspectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorViewController.swift; sourceTree = "<group>"; };
 		2B880B6F23B0FBEA00E26362 /* Editor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Editor.storyboard; sourceTree = "<group>"; };
-		2B880B7123B0FE7500E26362 /* IntPropertyEditorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntPropertyEditorCell.swift; sourceTree = "<group>"; };
+		2B880B7123B0FE7500E26362 /* NumericPropertyEditorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericPropertyEditorCell.swift; sourceTree = "<group>"; };
 		2B880B7323B1083C00E26362 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		2B880B7523B10BAD00E26362 /* Optional+Wrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Wrapped.swift"; sourceTree = "<group>"; };
 		2B880B7723B1108600E26362 /* Array+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Safe.swift"; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 				2B880B6F23B0FBEA00E26362 /* Editor.storyboard */,
 				2B880B7323B1083C00E26362 /* EditorViewController.swift */,
 				2B880B6B23B0F9C200E26362 /* InspectorViewController.swift */,
-				2B880B7123B0FE7500E26362 /* IntPropertyEditorCell.swift */,
+				2B880B7123B0FE7500E26362 /* NumericPropertyEditorCell.swift */,
 				2B83B8F223AA4CF300CF01A3 /* PropertyEditorCell.swift */,
 			);
 			path = EditorViews;
@@ -234,7 +234,7 @@
 				2B8BB7FF23A110570026A86C /* SceneDelegate.swift in Sources */,
 				2B914D1923A7008A0075164B /* DescriptorSerializer.swift in Sources */,
 				2B880B6D23B0F9C200E26362 /* InspectorViewController.swift in Sources */,
-				2B880B7223B0FE7500E26362 /* IntPropertyEditorCell.swift in Sources */,
+				2B880B7223B0FE7500E26362 /* NumericPropertyEditorCell.swift in Sources */,
 				2B880B7623B10BAD00E26362 /* Optional+Wrapped.swift in Sources */,
 				2B914D1D23A70C0E0075164B /* UIColor+Selector.m in Sources */,
 				2B52B73823A8FA7900B4C7A3 /* Property.swift in Sources */,

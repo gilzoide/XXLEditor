@@ -22,4 +22,13 @@ struct Property: Codable {
             || type.isString() && value is String
             || type.isColor() && value is UIColor
     }
+    
+    func baseName() -> String {
+        if let index = keyPath.lastIndex(of: ".") {
+            return String(keyPath.suffix(from: keyPath.index(after: index)))
+        }
+        else {
+            return keyPath
+        }
+    }
 }

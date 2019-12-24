@@ -36,6 +36,10 @@ class ViewDescriptor : Descriptor {
         return valid
     }
     
+    override func property(_ keyPath: String) -> Any? {
+        return super.property(keyPath) ?? _view?.value(forKeyPath: keyPath)
+    }
+    
     private var _view: UIView?
     var view: UIView {
         loadViewIfNeeded()

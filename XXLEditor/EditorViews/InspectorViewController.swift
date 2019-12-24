@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InspectorViewController: UITableViewController {
+class InspectorViewController: UITableViewController, PropertyEditorCellDelegate {
     var descriptor: ViewDescriptor? {
         didSet {
             let descriptorType = descriptor.wrappedType() as? Descriptor.Type
@@ -31,6 +31,12 @@ class InspectorViewController: UITableViewController {
     func propertyFor(indexPath: IndexPath) -> Property {
         return declaredPropertyList[indexPath.item]
     }
+    
+    func propertyEditorChangedValue(_ editor: PropertyEditorCell) {
+        if let keyPath = editor.property?.keyPath {
+            let _ = descriptor?.setProperty(keyPath, value: editor.value)
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -47,7 +53,11 @@ class InspectorViewController: UITableViewController {
         let property = propertyFor(indexPath: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: property.type.editorIdentifier, for: indexPath)
 
-        // Configure the cell...
+        if let cell = cell as? PropertyEditorCell {
+            cell.property = property
+            cell.value = descriptor?.property(property.keyPath) ?? 0
+            cell.delegate = self
+        }
 
         return cell
     }
