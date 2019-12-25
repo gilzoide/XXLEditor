@@ -20,4 +20,11 @@ extension UIViewController {
         childController.view.removeFromSuperview()
         childController.removeFromParent()
     }
+    func removeChild(_ childController: UIViewController, animatingFrame frame: CGRect, duration: TimeInterval = 0.25) {
+        UIView.animate(withDuration: duration, animations: {
+            childController.view.frame = frame
+        }) { (finished) in
+            self.removeChild(childController)
+        }
+    }
 }

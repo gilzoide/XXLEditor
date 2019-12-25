@@ -27,21 +27,23 @@ class SideSplitViewController: UIViewController, UIBarPositioningDelegate {
         layoutChildren(animated: animated)
     }
     func set(leftViewController viewController: UIViewController?, animated: Bool) {
+        let offRect = CGRect(x: -leftWidth, y: 0, width: leftWidth, height: containerView.bounds.height)
         if let oldVc = leftViewController {
-            removeChild(oldVc)
+            removeChild(oldVc, animatingFrame: offRect, duration: animated ? 0.25 : 0)
         }
         if let viewController = viewController {
-            addChild(viewController, containedIn: containerView, frame: CGRect(x: -leftWidth, y: 0, width: leftWidth, height: containerView.bounds.height))
+            addChild(viewController, containedIn: containerView, frame: offRect)
         }
         leftViewController = viewController
         layoutChildren(animated: animated)
     }
     func set(rightViewController viewController: UIViewController?, animated: Bool) {
+        let offRect = CGRect(x: containerView.bounds.width, y: 0, width: rightWidth, height: containerView.bounds.height)
         if let oldVc = rightViewController {
-            removeChild(oldVc)
+            removeChild(oldVc, animatingFrame: offRect, duration: animated ? 0.25 : 0)
         }
         if let viewController = viewController {
-            addChild(viewController, containedIn: containerView, frame: CGRect(x: containerView.bounds.width, y: 0, width: rightWidth, height: containerView.bounds.height))
+            addChild(viewController, containedIn: containerView, frame: offRect)
         }
         rightViewController = viewController
         layoutChildren(animated: animated)
