@@ -9,6 +9,7 @@
 import Foundation
 
 private let _declaredPropertyList: DeclaredPropertyList = [
+    Property(keyPath: "accessibilityIdentifier", type: Datatype.string),
     Property(keyPath: "tag", type: Datatype.int),
     Property(keyPath: "frame", type: Datatype.rect),
     Property(keyPath: "backgroundColor", type: Datatype.color),

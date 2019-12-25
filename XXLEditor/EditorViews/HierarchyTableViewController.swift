@@ -1,22 +1,16 @@
 //
-//  EditorTableViewController.swift
+//  HierarchyTableViewController.swift
 //  XXLEditor
 //
-//  Created by Gil on 12/23/19.
+//  Created by Gil on 12/24/19.
 //  Copyright © 2019 gilzoide. All rights reserved.
 //
 
 import UIKit
 
-class InspectorViewController: UITableViewController, PropertyEditorCellDelegate {
-    var descriptor: ViewDescriptor? {
-        didSet {
-            let descriptorType = descriptor.wrappedType() as? Descriptor.Type
-            declaredPropertyList = descriptorType?.declaredPropertyList ?? []
-        }
-    }
-    private var declaredPropertyList: DeclaredPropertyList = []
-        
+class HierarchyTableViewController: UITableViewController {
+    var descriptor: ViewDescriptor?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,54 +18,26 @@ class InspectorViewController: UITableViewController, PropertyEditorCellDelegate
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//        self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-    
-    func propertyFor(indexPath: IndexPath) -> Property {
-        return declaredPropertyList[indexPath.item]
-    }
-    
-    func propertyEditorChangedValue(_ editor: PropertyEditorCell) {
-        if let keyPath = editor.property?.keyPath {
-            let _ = descriptor?.setProperty(keyPath, value: editor.value)
-        }
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return descriptor != nil ? 1 : 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return declaredPropertyList.count
+        return 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let property = propertyFor(indexPath: indexPath)
-        let cell = tableView.dequeueReusableCell(withIdentifier: property.type.editorIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "view", for: indexPath)
 
-        if let cell = cell as? PropertyEditorCell {
-            cell.property = property
-            cell.value = descriptor?.property(property.keyPath) ?? 0
-            cell.delegate = self
-        }
+        cell.textLabel?.text = descriptor?.viewIfLoaded?.accessibilityIdentifier ?? "View \(indexPath.row)"
 
         return cell
-    }
-    
-    var heightCache: [String: CGFloat] = [:]
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let identifier = propertyFor(indexPath: indexPath).type.editorIdentifier
-        if let height = heightCache[identifier] {
-            return height
-        }
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier)
-        let height = cell?.bounds.height ?? tableView.rowHeight
-        heightCache[identifier] = height
-        return height
     }
     
 
@@ -119,5 +85,5 @@ class InspectorViewController: UITableViewController, PropertyEditorCellDelegate
         // Pass the selected object to the new view controller.
     }
     */
-    
+
 }

@@ -26,10 +26,15 @@
 		2B914D1723A6FD530075164B /* SimpleRoundedView.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B914D1623A6FD530075164B /* SimpleRoundedView.plist */; };
 		2B914D1923A7008A0075164B /* DescriptorSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B914D1823A7008A0075164B /* DescriptorSerializer.swift */; };
 		2B914D1D23A70C0E0075164B /* UIColor+Selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B914D1C23A70C0E0075164B /* UIColor+Selector.m */; };
+		2BA937E223B2BA220079525A /* SideSplitSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA937E123B2BA220079525A /* SideSplitSegue.swift */; };
+		2BA937E423B2BA570079525A /* SideSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA937E323B2BA570079525A /* SideSplitViewController.swift */; };
+		2BA937E623B2C0B70079525A /* UIViewController+Children.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA937E523B2C0B70079525A /* UIViewController+Children.swift */; };
 		2BB18D6B23A6641A007C3F7C /* VisualizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB18D6A23A6641A007C3F7C /* VisualizerViewController.swift */; };
 		2BB18D6E23A664E5007C3F7C /* VisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB18D6D23A664E5007C3F7C /* VisualizerView.swift */; };
 		2BEBBFFA23B247C000D34285 /* RectPropertyEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBBFF923B247C000D34285 /* RectPropertyEditorCell.swift */; };
 		2BEBBFFC23B2504100D34285 /* BoolPropertyEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBBFFB23B2504100D34285 /* BoolPropertyEditorCell.swift */; };
+		2BEBBFFE23B25C0A00D34285 /* HierarchyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBBFFD23B25C0A00D34285 /* HierarchyTableViewController.swift */; };
+		2BEBC00023B25CF100D34285 /* StringPropertyEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBBFFF23B25CF100D34285 /* StringPropertyEditorCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,11 +61,16 @@
 		2B914D1823A7008A0075164B /* DescriptorSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptorSerializer.swift; sourceTree = "<group>"; };
 		2B914D1B23A70C0E0075164B /* UIColor+Selector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Selector.h"; sourceTree = "<group>"; };
 		2B914D1C23A70C0E0075164B /* UIColor+Selector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Selector.m"; sourceTree = "<group>"; };
+		2BA937E123B2BA220079525A /* SideSplitSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideSplitSegue.swift; sourceTree = "<group>"; };
+		2BA937E323B2BA570079525A /* SideSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideSplitViewController.swift; sourceTree = "<group>"; };
+		2BA937E523B2C0B70079525A /* UIViewController+Children.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Children.swift"; sourceTree = "<group>"; };
 		2BB18D6A23A6641A007C3F7C /* VisualizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerViewController.swift; sourceTree = "<group>"; };
 		2BB18D6D23A664E5007C3F7C /* VisualizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerView.swift; sourceTree = "<group>"; };
 		2BBD7C2823A25A680065F65C /* XXLEditor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XXLEditor-Bridging-Header.h"; sourceTree = "<group>"; };
 		2BEBBFF923B247C000D34285 /* RectPropertyEditorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectPropertyEditorCell.swift; sourceTree = "<group>"; };
 		2BEBBFFB23B2504100D34285 /* BoolPropertyEditorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolPropertyEditorCell.swift; sourceTree = "<group>"; };
+		2BEBBFFD23B25C0A00D34285 /* HierarchyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchyTableViewController.swift; sourceTree = "<group>"; };
+		2BEBBFFF23B25CF100D34285 /* StringPropertyEditorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringPropertyEditorCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +91,9 @@
 				2B880B7523B10BAD00E26362 /* Optional+Wrapped.swift */,
 				2B914D1B23A70C0E0075164B /* UIColor+Selector.h */,
 				2B914D1C23A70C0E0075164B /* UIColor+Selector.m */,
+				2BA937E123B2BA220079525A /* SideSplitSegue.swift */,
+				2BA937E323B2BA570079525A /* SideSplitViewController.swift */,
+				2BA937E523B2C0B70079525A /* UIViewController+Children.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -152,6 +165,8 @@
 				2B83B8F223AA4CF300CF01A3 /* PropertyEditorCell.swift */,
 				2BEBBFF923B247C000D34285 /* RectPropertyEditorCell.swift */,
 				2BEBBFFB23B2504100D34285 /* BoolPropertyEditorCell.swift */,
+				2BEBBFFF23B25CF100D34285 /* StringPropertyEditorCell.swift */,
+				2BEBBFFD23B25C0A00D34285 /* HierarchyTableViewController.swift */,
 			);
 			path = EditorViews;
 			sourceTree = "<group>";
@@ -230,6 +245,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BA937E623B2C0B70079525A /* UIViewController+Children.swift in Sources */,
+				2BA937E223B2BA220079525A /* SideSplitSegue.swift in Sources */,
+				2BEBBFFE23B25C0A00D34285 /* HierarchyTableViewController.swift in Sources */,
 				2B83B8F323AA4CF300CF01A3 /* PropertyEditorCell.swift in Sources */,
 				2BEBBFFA23B247C000D34285 /* RectPropertyEditorCell.swift in Sources */,
 				2B52B73C23A900CE00B4C7A3 /* Datatype.swift in Sources */,
@@ -238,6 +256,7 @@
 				2BEBBFFC23B2504100D34285 /* BoolPropertyEditorCell.swift in Sources */,
 				2B880B7823B1108600E26362 /* Array+Safe.swift in Sources */,
 				2B8BB7FD23A110570026A86C /* AppDelegate.swift in Sources */,
+				2BA937E423B2BA570079525A /* SideSplitViewController.swift in Sources */,
 				2BB18D6E23A664E5007C3F7C /* VisualizerView.swift in Sources */,
 				2B8BB7FF23A110570026A86C /* SceneDelegate.swift in Sources */,
 				2B914D1923A7008A0075164B /* DescriptorSerializer.swift in Sources */,
@@ -245,6 +264,7 @@
 				2B880B7223B0FE7500E26362 /* NumericPropertyEditorCell.swift in Sources */,
 				2B880B7623B10BAD00E26362 /* Optional+Wrapped.swift in Sources */,
 				2B914D1D23A70C0E0075164B /* UIColor+Selector.m in Sources */,
+				2BEBC00023B25CF100D34285 /* StringPropertyEditorCell.swift in Sources */,
 				2B52B73823A8FA7900B4C7A3 /* Property.swift in Sources */,
 				2B52B73A23A8FBAD00B4C7A3 /* ViewDescriptor.swift in Sources */,
 				2B880B7423B1083C00E26362 /* EditorViewController.swift in Sources */,
