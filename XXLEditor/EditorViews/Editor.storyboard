@@ -34,9 +34,6 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <connections>
-                                    <outlet property="delegate" destination="yB1-l5-29f" id="kdk-GX-ELs"/>
-                                </connections>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -62,6 +59,8 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="containerView" destination="wHj-Vf-ncM" id="Y4I-3M-1fZ"/>
+                        <outlet property="leftBarButtonItem" destination="Zbc-5k-i2b" id="OGh-8Z-TWR"/>
+                        <outlet property="rightBarButtonItem" destination="Dkq-xl-k8N" id="7xY-Rr-7Lo"/>
                         <segue destination="3Oi-gX-HM4" kind="custom" identifier="initial" customClass="MainSideSplitSegue" customModule="XXLEditor" customModuleProvider="target" id="7LL-Rx-yfh"/>
                         <segue destination="0Sk-hc-csO" kind="custom" identifier="left" customClass="LeftSideSplitSegue" customModule="XXLEditor" customModuleProvider="target" id="rFJ-gv-fQL"/>
                         <segue destination="J4Z-x9-QLV" kind="custom" identifier="right" customClass="RightSideSplitSegue" customModule="XXLEditor" customModuleProvider="target" id="yKg-cl-bQ8"/>

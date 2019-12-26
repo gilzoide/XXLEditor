@@ -8,6 +8,8 @@
 
 import UIKit
 
+let EditorMenuIdentifier = UIMenu.Identifier("com.gilzoide.xxleditor-editor.submenu")
+
 class EditorViewController: SideSplitViewController {
     @IBInspectable var filePath: String? {
         didSet {
@@ -30,6 +32,8 @@ class EditorViewController: SideSplitViewController {
         super.viewDidLoad()
 
         performSegue(withIdentifier: "initial", sender: nil)
+        addKeyCommand(EditorViewController.toggleHierarchyKeyCommand)
+        addKeyCommand(EditorViewController.toggleInspectorKeyCommand)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,4 +59,19 @@ class EditorViewController: SideSplitViewController {
             viewController.descriptor = descriptor
         }
     }
+    
+    // MARK: KeyCommands
+    static var toggleInspectorKeyCommand: UIKeyCommand = UIKeyCommand(title: "Toggle inspector",
+                                                                      image: nil,
+                                                                      action: #selector(toggleRight(_:)),
+                                                                      input: "]",
+                                                                      modifierFlags: .command,
+                                                                      propertyList: nil)
+    static var toggleHierarchyKeyCommand: UIKeyCommand = UIKeyCommand(title: "Toggle hierarchy",
+                                                                      image: nil,
+                                                                      action: #selector(toggleLeft(_:)),
+                                                                      input: "[",
+                                                                      modifierFlags: .command,
+                                                                      propertyList: nil)
+
 }

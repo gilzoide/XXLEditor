@@ -8,15 +8,19 @@
 
 import UIKit
 
-class SideSplitViewController: UIViewController, UIBarPositioningDelegate {
+class SideSplitViewController: UIViewController {
     var mainViewController: UIViewController?
     var leftViewController: UIViewController?
     var rightViewController: UIViewController?
     
     @IBOutlet var containerView: UIView!
+    @IBOutlet var leftBarButtonItem: UIBarButtonItem!
+    @IBOutlet var rightBarButtonItem: UIBarButtonItem!
     
     @IBInspectable var leftWidth: CGFloat = 0
     @IBInspectable var rightWidth: CGFloat = 0
+    @IBInspectable var collapsedColor: UIColor = UIColor.link
+    @IBInspectable var expandedColor: UIColor = UIColor.label
     
     func set(mainViewController viewController: UIViewController, animated: Bool) {
         if let oldVc = mainViewController {
@@ -33,6 +37,10 @@ class SideSplitViewController: UIViewController, UIBarPositioningDelegate {
         }
         if let viewController = viewController {
             addChild(viewController, containedIn: containerView, frame: offRect)
+            leftBarButtonItem.tintColor = expandedColor
+        }
+        else {
+            leftBarButtonItem.tintColor = collapsedColor
         }
         leftViewController = viewController
         layoutChildren(animated: animated)
@@ -44,6 +52,10 @@ class SideSplitViewController: UIViewController, UIBarPositioningDelegate {
         }
         if let viewController = viewController {
             addChild(viewController, containedIn: containerView, frame: offRect)
+            rightBarButtonItem.tintColor = expandedColor
+        }
+        else {
+            rightBarButtonItem.tintColor = collapsedColor
         }
         rightViewController = viewController
         layoutChildren(animated: animated)
@@ -66,36 +78,20 @@ class SideSplitViewController: UIViewController, UIBarPositioningDelegate {
         }
     }
     
-    func position(for bar: UIBarPositioning) -> UIBarPosition {
-        return .topAttached
-    }
-    
     @IBAction func toggleLeft(_ sender: Any?) {
         if leftViewController == nil {
             performSegue(withIdentifier: "left", sender: sender)
-            if let button = sender as? UIBarButtonItem {
-                button.tintColor = UIColor.label
-            }
         }
         else {
             set(leftViewController: nil, animated: sender != nil)
-            if let button = sender as? UIBarButtonItem {
-                button.tintColor = UIColor.link
-            }
         }
     }
     @IBAction func toggleRight(_ sender: Any?) {
         if rightViewController == nil {
             performSegue(withIdentifier: "right", sender: sender)
-            if let button = sender as? UIBarButtonItem {
-                button.tintColor = UIColor.label
-            }
         }
         else {
             set(rightViewController: nil, animated: sender != nil)
-            if let button = sender as? UIBarButtonItem {
-                button.tintColor = UIColor.link
-            }
         }
     }
 }
