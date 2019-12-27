@@ -54,11 +54,8 @@ class ViewDescriptor : Descriptor {
     }
     
     func loadViewIfNeeded() {
-        if (_view == nil) {
-            _view = XXLView()
-            for (keyPath, value) in properties {
-                _view!.setValue(value, forKeyPath: keyPath)
-            }
+        if _view == nil {
+            _view = XXLView(descriptor: self)
         }
     }
 }

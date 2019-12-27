@@ -18,4 +18,11 @@ import UIKit
         get { return frame.size }
         set { frame = CGRect(origin: frame.origin, size: newValue) }
     }
+    
+    convenience init(descriptor: ViewDescriptor) {
+        self.init()
+        for (keyPath, value) in descriptor.properties {
+            self.setValue(value, forKeyPath: keyPath)
+        }
+    }
 }
