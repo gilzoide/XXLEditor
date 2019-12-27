@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol HierarchyViewControllerDelegate: class {
+    func didSelect(descriptor: Descriptor?)
+}
+
 class HierarchyViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var rootDescriptor: Descriptor? {
         didSet {
@@ -18,6 +22,7 @@ class HierarchyViewController: UIViewController, UITableViewDataSource, UITableV
     }
     var hierarchy: DescriptorHierarchy?
     
+    weak var delegate: HierarchyViewControllerDelegate?
     @IBOutlet var tableView: UITableView!
     
     @IBAction func createView(_ sender: Any?) {
@@ -55,6 +60,10 @@ class HierarchyViewController: UIViewController, UITableViewDataSource, UITableV
         return cell
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.didSelect(descriptor: descriptor(forIndexPath: indexPath))
+    }
 
     /*
     // Override to support conditional editing of the table view.

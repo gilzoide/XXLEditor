@@ -10,7 +10,7 @@ import UIKit
 
 let EditorMenuIdentifier = UIMenu.Identifier("com.gilzoide.xxleditor-editor.submenu")
 
-class EditorViewController: SideSplitViewController {
+class EditorViewController: SideSplitViewController, HierarchyViewControllerDelegate {
     @IBInspectable var filePath: String? {
         didSet {
             refreshDescriptor()
@@ -27,6 +27,9 @@ class EditorViewController: SideSplitViewController {
         didSet {
             inspector?.descriptor = selectedDescriptor
         }
+    }
+    func didSelect(descriptor: Descriptor?) {
+        selectedDescriptor = descriptor
     }
     
     var hierarchy: HierarchyViewController? {
@@ -62,6 +65,7 @@ class EditorViewController: SideSplitViewController {
         super.prepare(for: segue, sender: sender)
         if let viewController = segue.destination as? HierarchyViewController {
             viewController.rootDescriptor = rootDescriptor
+            viewController.delegate = self
         }
         if let viewController = segue.destination as? InspectorViewController {
             viewController.descriptor = selectedDescriptor

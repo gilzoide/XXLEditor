@@ -15,6 +15,11 @@ class StringPropertyEditorCell: PropertyEditorCell {
         super.init(coder: coder)
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        textField.text = ""
+    }
+    
     @IBAction func textFieldEditingEnd(_ textField: UITextField) {
         if let text = textField.text {
             setValueAndNotify(text)
