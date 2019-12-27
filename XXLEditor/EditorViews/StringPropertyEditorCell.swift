@@ -17,13 +17,14 @@ class StringPropertyEditorCell: PropertyEditorCell {
     
     @IBAction func textFieldEditingEnd(_ textField: UITextField) {
         if let text = textField.text {
-            value = text
+            setValueAndNotify(text)
         }
     }
     
-    override func valueDidSet() {
+    override func setValue(_ value: Any) {
         if let value = value as? String {
             textField.text = value
+            super.setValue(value)
         }
     }
 }

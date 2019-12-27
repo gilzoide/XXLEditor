@@ -9,8 +9,8 @@
 import Foundation
 
 struct Property: Codable {
-    var keyPath: String
-    var type: Datatype
+    public let keyPath: String
+    public let type: Datatype
     
     init(keyPath: String, type: Datatype) {
         self.keyPath = keyPath

@@ -8,19 +8,19 @@
 
 import Foundation
 
-typealias DeclaredPropertyList = [Property]
-typealias DeclaredProperties = [String: Property]
+typealias DescriptorPropertyList = [Property]
+typealias DescriptorProperties = [String: Property]
 
-private let _declaredPropertyList: DeclaredPropertyList = []
-private let _declaredProperties: DeclaredProperties = [:]
+private let _declaredPropertyList: DescriptorPropertyList = []
+private let _declaredProperties: DescriptorProperties = [:]
 
 class Descriptor {
     /// To be overriden as appropriate
-    class var declaredPropertyList: DeclaredPropertyList {
+    class var declaredPropertyList: DescriptorPropertyList {
         return _declaredPropertyList
     }
     /// To be overriden as appropriate
-    class var declaredProperties: DeclaredProperties {
+    class var declaredProperties: DescriptorProperties {
         return _declaredProperties
     }
     

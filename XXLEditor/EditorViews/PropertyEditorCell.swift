@@ -20,13 +20,19 @@ class PropertyEditorCell: UITableViewCell {
     }
     @IBOutlet var titleLabel: UILabel?
     
-    var value: Any = 0 {
-        didSet {
-            valueDidSet()
-            delegate?.propertyEditorChangedValue(self)
-        }
+    var value: Any = 0
+    func setValue(_ value: Any) {
+        self.value = value
     }
-    func valueDidSet() {}
+    func setValueAndNotify(_ value: Any) {
+        self.value = value
+        delegate?.propertyEditorChangedValue(self)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        property = nil
+    }
     
     var delegate: PropertyEditorCellDelegate?
 }

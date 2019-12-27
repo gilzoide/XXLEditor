@@ -16,12 +16,13 @@ class BoolPropertyEditorCell: PropertyEditorCell {
     }
     
     @IBAction func switchValueChanged(_ sender: UISwitch) {
-        value = sender.isOn
+        setValueAndNotify(sender.isOn)
     }
     
-    override func valueDidSet() {
+    override func setValue(_ value: Any) {
         if let value = value as? Bool {
             switchView.setOn(value, animated: true)
+            super.setValue(value)
         }
     }
 

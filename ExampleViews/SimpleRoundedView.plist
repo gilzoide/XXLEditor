@@ -4,8 +4,10 @@
 <dict>
 	<key>backgroundColor</key>
 	<string>labelColor</string>
-	<key>frame</key>
-	<string>{{100,100},{100,100}}</string>
+	<key>origin</key>
+	<string>{100,100}</string>
+	<key>size</key>
+	<string>{100,100}</string>
 	<key>layer.cornerRadius</key>
 	<string>10</string>
 </dict>

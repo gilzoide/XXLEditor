@@ -17,19 +17,20 @@ class NumericPropertyEditorCell: PropertyEditorCell {
     }
     
     @IBAction func stepperValueChanged(_ stepper: UIStepper) {
-        value = stepper.value
+        setValueAndNotify(stepper.value)
     }
     @IBAction func textFieldEditingEnd(_ textField: UITextField) {
         if let text = textField.text, let value = Double(text) {
-            self.value = value
+            setValueAndNotify(value)
         }
     }
     
-    override func valueDidSet() {
+    override func setValue(_ value: Any) {
         if let value = value as? Double {
             let fmt = property?.type == .int ? "%.0f" : "%g"
             textField.text = String(format: fmt, value)
             stepper.value = value
+            super.setValue(value)
         }
     }
 }

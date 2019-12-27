@@ -15,7 +15,7 @@ class InspectorViewController: UITableViewController, PropertyEditorCellDelegate
             declaredPropertyList = descriptorType?.declaredPropertyList ?? []
         }
     }
-    private var declaredPropertyList: DeclaredPropertyList = []
+    private var declaredPropertyList: DescriptorPropertyList = []
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +54,7 @@ class InspectorViewController: UITableViewController, PropertyEditorCellDelegate
 
         if let cell = cell as? PropertyEditorCell {
             cell.property = property
-            cell.value = descriptor?.property(property.keyPath) ?? 0
+            cell.setValue(descriptor?.property(property.keyPath) ?? 0)
             cell.delegate = self
         }
 

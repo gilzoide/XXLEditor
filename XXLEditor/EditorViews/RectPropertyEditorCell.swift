@@ -20,16 +20,17 @@ class RectPropertyEditorCell: PropertyEditorCell {
     
     @IBAction func textFieldEditingEnd(_ textField: UITextField) {
         if let _ = textField.text {
-            self.value = getRect()
+            setValueAndNotify(getRect())
         }
     }
     
-    override func valueDidSet() {
+    override func setValue(_ value: Any) {
         if let value = value as? CGRect {
             xTextField.text = String(Int(value.origin.x))
             yTextField.text = String(Int(value.origin.y))
             widthTextField.text = String(Int(value.size.width))
             heightTextField.text = String(Int(value.size.height))
+            super.setValue(value)
         }
     }
     

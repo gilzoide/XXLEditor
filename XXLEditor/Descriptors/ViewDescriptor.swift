@@ -8,25 +8,26 @@
 
 import Foundation
 
-private let _declaredPropertyList: DeclaredPropertyList = [
+private let _declaredPropertyList: DescriptorPropertyList = [
     Property(keyPath: "accessibilityIdentifier", type: Datatype.string),
     Property(keyPath: "tag", type: Datatype.int),
-    Property(keyPath: "frame", type: Datatype.rect),
+    Property(keyPath: "origin", type: Datatype.point),
+    Property(keyPath: "size", type: Datatype.size),
     Property(keyPath: "backgroundColor", type: Datatype.color),
     Property(keyPath: "hidden", type: Datatype.bool),
     Property(keyPath: "layer.cornerRadius", type: Datatype.float),
 ]
-private let _declaredProperties: DeclaredProperties = {
+private let _declaredProperties: DescriptorProperties = {
     return _declaredPropertyList.reduce(into: [:]) { (dict, p) in
         dict[p.keyPath] = p
     }
 }()
 
 class ViewDescriptor : Descriptor {
-    override class var declaredPropertyList: DeclaredPropertyList {
+    override class var declaredPropertyList: DescriptorPropertyList {
         return _declaredPropertyList
     }
-    override class var declaredProperties: DeclaredProperties {
+    override class var declaredProperties: DescriptorProperties {
         return _declaredProperties
     }
     
@@ -42,19 +43,19 @@ class ViewDescriptor : Descriptor {
         return super.property(keyPath) ?? _view?.value(forKeyPath: keyPath)
     }
     
-    private var _view: UIView?
-    var view: UIView {
+    private var _view: XXLView?
+    var view: XXLView {
         loadViewIfNeeded()
         return _view!
     }
     
-    var viewIfLoaded: UIView? {
+    var viewIfLoaded: XXLView? {
         return _view
     }
     
     func loadViewIfNeeded() {
         if (_view == nil) {
-            _view = UIView()
+            _view = XXLView()
             for (keyPath, value) in properties {
                 _view!.setValue(value, forKeyPath: keyPath)
             }
