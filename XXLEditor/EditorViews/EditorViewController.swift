@@ -16,10 +16,21 @@ class EditorViewController: SideSplitViewController {
             refreshDescriptor()
         }
     }
-    var descriptor: ViewDescriptor?
+    var rootDescriptor: ViewDescriptor? {
+        didSet {
+            hierarchy?.rootDescriptor = rootDescriptor
+            visualizer?.rootDescriptor = rootDescriptor
+            selectedDescriptor = rootDescriptor
+        }
+    }
+    var selectedDescriptor: Descriptor? {
+        didSet {
+            inspector?.descriptor = selectedDescriptor
+        }
+    }
     
-    var hierarchy: HierarchyTableViewController? {
-        return leftViewController as? HierarchyTableViewController
+    var hierarchy: HierarchyViewController? {
+        return leftViewController as? HierarchyViewController
     }
     var visualizer: VisualizerViewController? {
         return mainViewController as? VisualizerViewController
@@ -43,20 +54,17 @@ class EditorViewController: SideSplitViewController {
     
     private func refreshDescriptor() {
         if let filePath = filePath, let descriptor = DescriptorSerializer.descriptorFromFile(filePath: filePath) {
-            self.descriptor = descriptor
-            visualizer?.descriptor = descriptor
-            hierarchy?.descriptor = descriptor
-            inspector?.descriptor = descriptor
+            self.rootDescriptor = descriptor
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        if let viewController = segue.destination as? HierarchyTableViewController {
-            viewController.descriptor = descriptor
+        if let viewController = segue.destination as? HierarchyViewController {
+            viewController.rootDescriptor = rootDescriptor
         }
         if let viewController = segue.destination as? InspectorViewController {
-            viewController.descriptor = descriptor
+            viewController.descriptor = selectedDescriptor
         }
     }
     

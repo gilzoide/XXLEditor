@@ -24,13 +24,21 @@ private let _declaredProperties: DescriptorProperties = {
 }()
 
 class ViewDescriptor : Descriptor {
+    // MARK: Class Properties
     override class var declaredPropertyList: DescriptorPropertyList {
+        return _declaredPropertyList
+    }
+    override var declaredPropertyList: DescriptorPropertyList {
         return _declaredPropertyList
     }
     override class var declaredProperties: DescriptorProperties {
         return _declaredProperties
     }
+    override var declaredProperties: DescriptorProperties {
+        return _declaredProperties
+    }
     
+    // MARK: Instance Properties
     override func setProperty(_ keyPath: String, value: Any) -> Bool {
         let valid = super.setProperty(keyPath, value: value)
         if (valid) {
@@ -43,6 +51,7 @@ class ViewDescriptor : Descriptor {
         return super.property(keyPath) ?? _view?.value(forKeyPath: keyPath)
     }
     
+    // MARK: View
     private var _view: XXLView?
     var view: XXLView {
         loadViewIfNeeded()
@@ -56,6 +65,24 @@ class ViewDescriptor : Descriptor {
     func loadViewIfNeeded() {
         if _view == nil {
             _view = XXLView(descriptor: self)
+            for child in children {
+                addInHierarchy(child)
+            }
+        }
+    }
+    
+    // MARK: Hierarchy
+    override func add(child: Descriptor) {
+        super.add(child: child)
+        addInHierarchy(child)
+    }
+    
+    private func addInHierarchy(_ descriptor: Descriptor) {
+        switch descriptor {
+        case let subviewDescriptor as ViewDescriptor:
+            _view?.addSubview(subviewDescriptor.view)
+        default:
+            break
         }
     }
 }

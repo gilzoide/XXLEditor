@@ -9,10 +9,10 @@
 import UIKit
 
 class VisualizerViewController: UIViewController {
-    var descriptor: ViewDescriptor? {
+    var rootDescriptor: ViewDescriptor? {
         didSet {
             loadViewIfNeeded()
-            visualizer.descriptor = descriptor
+            visualizer.descriptor = rootDescriptor
         }
     }
     

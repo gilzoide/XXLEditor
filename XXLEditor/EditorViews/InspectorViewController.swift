@@ -9,10 +9,11 @@
 import UIKit
 
 class InspectorViewController: UITableViewController, PropertyEditorCellDelegate {
-    var descriptor: ViewDescriptor? {
+    var descriptor: Descriptor? {
         didSet {
-            let descriptorType = descriptor.wrappedType() as? Descriptor.Type
-            declaredPropertyList = descriptorType?.declaredPropertyList ?? []
+            loadViewIfNeeded()
+            declaredPropertyList = descriptor?.declaredPropertyList ?? []
+            tableView.reloadData()
         }
     }
     private var declaredPropertyList: DescriptorPropertyList = []

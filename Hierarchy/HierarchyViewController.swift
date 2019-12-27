@@ -1,41 +1,56 @@
 //
-//  HierarchyTableViewController.swift
+//  HierarchyViewController.swift
 //  XXLEditor
 //
-//  Created by Gil on 12/24/19.
+//  Created by Gil on 12/27/19.
 //  Copyright © 2019 gilzoide. All rights reserved.
 //
 
 import UIKit
 
-class HierarchyTableViewController: UITableViewController {
-    var descriptor: ViewDescriptor?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+class HierarchyViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    var rootDescriptor: Descriptor? {
+        didSet {
+            if let rootDescriptor = rootDescriptor {
+                hierarchy = DescriptorHierarchy(descriptor: rootDescriptor)
+            }
+        }
+    }
+    var hierarchy: DescriptorHierarchy?
+    
+    @IBOutlet var tableView: UITableView!
+    
+    @IBAction func createView(_ sender: Any?) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let initialProperties: DescriptorInstanceProperties = ["size": CGSize(width: 32, height: 32),
+                                                                   "backgroundColor": UIColor.red]
+            hierarchy?.addDescriptor(ViewDescriptor(properties: initialProperties),
+                                     asChildOf: descriptor(forIndexPath: indexPath)!)
+            tableView.reloadData()
+        }
+    }
+    
+    func descriptor(forIndexPath indexPath: IndexPath) -> Descriptor? {
+        return hierarchy?[indexPath.row]
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return hierarchy?.count ?? 0
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "view", for: indexPath)
 
-        cell.textLabel?.text = descriptor?.viewIfLoaded?.accessibilityIdentifier ?? "View \(indexPath.row)"
+        if let cell = cell as? HierarchyViewCell {
+            cell.descriptor = descriptor(forIndexPath: indexPath) as? ViewDescriptor
+        }
 
         return cell
     }
@@ -57,7 +72,7 @@ class HierarchyTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -85,5 +100,4 @@ class HierarchyTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
