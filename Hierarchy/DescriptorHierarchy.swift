@@ -15,10 +15,16 @@ class DescriptorHierarchy {
         if let parentDescriptor = parentDescriptor {
             parentDescriptor.add(child: descriptor)
         }
-        items[descriptor.indexPath] = descriptor
-        sortedItems.append(descriptor)
-        sortedItems.sort { (d1, d2) -> Bool in
+        addDescriptorHierarchy(descriptor)
+        sortedItems = items.values.sorted(by: { (d1, d2) -> Bool in
             return d2.indexPath > d1.indexPath
+        })
+    }
+    
+    private func addDescriptorHierarchy(_ descriptor: Descriptor) {
+        items[descriptor.indexPath] = descriptor
+        for child in descriptor.children {
+            addDescriptorHierarchy(child)
         }
     }
     
