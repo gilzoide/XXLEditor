@@ -31,4 +31,27 @@ struct Property: Codable {
             return keyPath
         }
     }
+    
+    // MARK: Serialization
+    static func read(type: Datatype, description: String) -> Any? {
+        switch type {
+        case .bool, .int, .float:
+            let numberFormatter = NumberFormatter()
+            return numberFormatter.number(from: description)
+        case .point:
+            return NSValue(cgPoint: NSCoder.cgPoint(for: description))
+        case .size:
+            return NSValue(cgSize: NSCoder.cgSize(for: description))
+        case .rect:
+            return NSValue(cgRect: NSCoder.cgRect(for: description))
+        case .string:
+            return description
+        case .color:
+            let hexa3 = try! NSRegularExpression(pattern: "#\\d{3}")
+            let color = UIColor.init(fromSelectorName: description)
+            return color
+        default:
+            return nil
+        }
+    }
 }
