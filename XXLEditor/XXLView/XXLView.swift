@@ -25,4 +25,13 @@ import UIKit
             self.setValue(value, forKeyPath: keyPath)
         }
     }
+    
+    func addInHierarchy(descriptor: Descriptor) {
+        switch descriptor {
+        case let subviewDescriptor as ViewDescriptor:
+            addSubview(subviewDescriptor.view)
+        default:
+            break
+        }
+    }
 }

@@ -11,6 +11,9 @@
 @implementation UIColor (Selector)
 
 + (nullable UIColor *)colorFromSelectorName:(NSString *)name {
+    if (![name hasSuffix:@"Color"]) {
+        name = [name stringByAppendingString:@"Color"];
+    }
     SEL selector = NSSelectorFromString(name);
     id obj = [UIColor respondsToSelector:selector] ? [UIColor performSelector:selector] : nil;
     return [obj isKindOfClass:UIColor.class] ? obj : nil;

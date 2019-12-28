@@ -79,11 +79,6 @@ class ViewDescriptor : Descriptor {
     }
     
     private func addInHierarchy(_ descriptor: Descriptor) {
-        switch descriptor {
-        case let subviewDescriptor as ViewDescriptor:
-            _view?.addSubview(subviewDescriptor.view)
-        default:
-            break
-        }
+        _view?.addInHierarchy(descriptor: descriptor)
     }
 }

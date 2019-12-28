@@ -483,7 +483,7 @@
                                     <outlet property="titleLabel" destination="8mR-o2-KAA" id="XnO-zi-GX2"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="colorEditor" id="0gF-gL-hbG" customClass="PropertyEditorCell" customModule="XXLEditor" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="colorEditor" id="0gF-gL-hbG" customClass="ColorPropertyEditorCell" customModule="XXLEditor" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="374" width="800" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0gF-gL-hbG" id="Erj-Gw-tB1">
@@ -498,19 +498,20 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DUy-Xz-6YG">
-                                            <rect key="frame" x="160" y="4" width="98" height="34"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                            <rect key="frame" x="160" y="4" width="203" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="textFieldEditingDidChange:" destination="0gF-gL-hbG" eventType="editingChanged" id="cez-7z-svC"/>
+                                                <action selector="textFieldEditingEnd:" destination="0gF-gL-hbG" eventType="editingDidEnd" id="jxg-0q-GMp"/>
+                                            </connections>
                                         </textField>
-                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="2000" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="4fe-gb-4ak">
-                                            <rect key="frame" x="270" y="5" width="94" height="32"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </stepper>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="textField" destination="DUy-Xz-6YG" id="qbN-iK-Qlv"/>
                                     <outlet property="titleLabel" destination="zzg-nh-Qev" id="5Qa-cx-59S"/>
                                 </connections>
                             </tableViewCell>

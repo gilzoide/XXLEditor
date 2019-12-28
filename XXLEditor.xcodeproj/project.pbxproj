@@ -35,6 +35,7 @@
 		2BB16FC423B6A1BF002A6576 /* HierarchyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB16FC323B6A1BF002A6576 /* HierarchyViewController.swift */; };
 		2BB18D6B23A6641A007C3F7C /* VisualizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB18D6A23A6641A007C3F7C /* VisualizerViewController.swift */; };
 		2BB18D6E23A664E5007C3F7C /* VisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB18D6D23A664E5007C3F7C /* VisualizerView.swift */; };
+		2BE79A4A23B79795002C3434 /* ColorPropertyEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE79A4923B79794002C3434 /* ColorPropertyEditorCell.swift */; };
 		2BEBBFFA23B247C000D34285 /* RectPropertyEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBBFF923B247C000D34285 /* RectPropertyEditorCell.swift */; };
 		2BEBBFFC23B2504100D34285 /* BoolPropertyEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBBFFB23B2504100D34285 /* BoolPropertyEditorCell.swift */; };
 		2BEBC00023B25CF100D34285 /* StringPropertyEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBBFFF23B25CF100D34285 /* StringPropertyEditorCell.swift */; };
@@ -76,6 +77,7 @@
 		2BB18D6A23A6641A007C3F7C /* VisualizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerViewController.swift; sourceTree = "<group>"; };
 		2BB18D6D23A664E5007C3F7C /* VisualizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerView.swift; sourceTree = "<group>"; };
 		2BBD7C2823A25A680065F65C /* XXLEditor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XXLEditor-Bridging-Header.h"; sourceTree = "<group>"; };
+		2BE79A4923B79794002C3434 /* ColorPropertyEditorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPropertyEditorCell.swift; sourceTree = "<group>"; };
 		2BEBBFF923B247C000D34285 /* RectPropertyEditorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectPropertyEditorCell.swift; sourceTree = "<group>"; };
 		2BEBBFFB23B2504100D34285 /* BoolPropertyEditorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolPropertyEditorCell.swift; sourceTree = "<group>"; };
 		2BEBBFFF23B25CF100D34285 /* StringPropertyEditorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringPropertyEditorCell.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				2BEBBFFF23B25CF100D34285 /* StringPropertyEditorCell.swift */,
 				2B89ACE823B6554900AE11C2 /* PointPropertyEditorCell.swift */,
 				2B89ACEA23B655A000AE11C2 /* SizePropertyEditorCell.swift */,
+				2BE79A4923B79794002C3434 /* ColorPropertyEditorCell.swift */,
 			);
 			path = EditorViews;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BE79A4A23B79795002C3434 /* ColorPropertyEditorCell.swift in Sources */,
 				2BA937E623B2C0B70079525A /* UIViewController+Children.swift in Sources */,
 				2B89ACEB23B655A000AE11C2 /* SizePropertyEditorCell.swift in Sources */,
 				2BA937E223B2BA220079525A /* SideSplitSegue.swift in Sources */,
