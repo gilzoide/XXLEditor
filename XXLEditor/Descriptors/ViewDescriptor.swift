@@ -15,6 +15,7 @@ private let _declaredPropertyList: DescriptorPropertyList = [
     Property(keyPath: "size", type: Datatype.size),
     Property(keyPath: "backgroundColor", type: Datatype.color),
     Property(keyPath: "hidden", type: Datatype.bool),
+    Property(keyPath: "clipsToBounds", type: Datatype.bool),
     Property(keyPath: "layer.cornerRadius", type: Datatype.float),
 ]
 private let _declaredProperties: DescriptorProperties = {
