@@ -17,6 +17,47 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHj-Vf-ncM">
                                 <rect key="frame" x="0.0" y="0.0" width="800" height="550"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pNm-zW-SAc">
+                                        <rect key="frame" x="-200" y="0.0" width="200" height="550"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9g9-z7-20s" userLabel="Separator">
+                                                <rect key="frame" x="199" y="0.0" width="1" height="550"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.zPosition">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xTP-2f-aBC">
+                                        <rect key="frame" x="0.0" y="0.0" width="800" height="550"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uzx-UZ-Gjf">
+                                        <rect key="frame" x="800" y="0.0" width="374" height="550"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e0f-G9-0dm" userLabel="Separator">
+                                                <rect key="frame" x="0.0" y="0.0" width="1" height="550"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.zPosition">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3u-FY-z7W">
@@ -50,17 +91,14 @@
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="filePath" value="SimpleRoundedView"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="leftWidth">
-                            <real key="value" value="200"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="rightWidth">
-                            <real key="value" value="374"/>
-                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="containerView" destination="wHj-Vf-ncM" id="Y4I-3M-1fZ"/>
+                        <outlet property="containerView" destination="wHj-Vf-ncM" id="BCh-b0-0Er"/>
                         <outlet property="leftBarButtonItem" destination="Zbc-5k-i2b" id="OGh-8Z-TWR"/>
+                        <outlet property="leftContainerView" destination="pNm-zW-SAc" id="3ql-lw-ckd"/>
+                        <outlet property="mainContainerView" destination="xTP-2f-aBC" id="hbm-vy-FXR"/>
                         <outlet property="rightBarButtonItem" destination="Dkq-xl-k8N" id="7xY-Rr-7Lo"/>
+                        <outlet property="rightContainerView" destination="uzx-UZ-Gjf" id="yla-zS-1dx"/>
                         <segue destination="3Oi-gX-HM4" kind="custom" identifier="initial" customClass="MainSideSplitSegue" customModule="XXLEditor" customModuleProvider="target" id="7LL-Rx-yfh"/>
                         <segue destination="J4Z-x9-QLV" kind="custom" identifier="right" customClass="RightSideSplitSegue" customModule="XXLEditor" customModuleProvider="target" id="yKg-cl-bQ8"/>
                         <segue destination="vbo-n5-6da" kind="custom" identifier="left" customClass="LeftSideSplitSegue" customModule="XXLEditor" customModuleProvider="target" id="uMu-Bq-MzU"/>
@@ -95,7 +133,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nl7-Hx-Tqd">
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="boolEditor" id="APH-Yo-sFY" customClass="BoolPropertyEditorCell" customModule="XXLEditor" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="800" height="43.5"/>
@@ -120,6 +158,7 @@
                                         </switch>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="switchView" destination="CXb-fc-6ng" id="6cq-eD-8W8"/>
                                     <outlet property="titleLabel" destination="Q3q-E1-exW" id="fEH-Pp-YDA"/>
@@ -145,6 +184,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             <connections>
+                                                <action selector="textFieldEditingDidChange:" destination="sp2-50-jai" eventType="editingChanged" id="HRe-i4-cpw"/>
                                                 <action selector="textFieldEditingEnd:" destination="sp2-50-jai" eventType="editingDidEnd" id="sKw-Lb-8ia"/>
                                             </connections>
                                         </textField>
@@ -157,6 +197,7 @@
                                         </stepper>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="stepper" destination="NUy-Qb-kBi" id="Hdw-4M-F11"/>
                                     <outlet property="textField" destination="gEB-dU-SqN" id="4h2-hq-RMZ"/>
@@ -183,6 +224,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             <connections>
+                                                <action selector="textFieldEditingDidChange:" destination="xxL-Zy-juO" eventType="editingChanged" id="I1K-lG-Xy4"/>
                                                 <action selector="textFieldEditingEnd:" destination="xxL-Zy-juO" eventType="editingDidEnd" id="5yr-7t-1rl"/>
                                             </connections>
                                         </textField>
@@ -195,6 +237,7 @@
                                         </stepper>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="stepper" destination="09I-b6-FqU" id="RZW-xa-Ct2"/>
                                     <outlet property="textField" destination="I71-Wt-qvI" id="Tl3-sD-xwx"/>
@@ -228,6 +271,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             <connections>
+                                                <action selector="textFieldEditingDidChange:" destination="XjC-wq-J9A" eventType="editingChanged" id="vps-QM-wBh"/>
                                                 <action selector="textFieldEditingEnd:" destination="XjC-wq-J9A" eventType="editingDidEnd" id="F88-fh-Ezl"/>
                                             </connections>
                                         </textField>
@@ -244,11 +288,13 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             <connections>
+                                                <action selector="textFieldEditingDidChange:" destination="XjC-wq-J9A" eventType="editingChanged" id="gpb-gZ-u1d"/>
                                                 <action selector="textFieldEditingEnd:" destination="XjC-wq-J9A" eventType="editingDidEnd" id="eaC-6r-q68"/>
                                             </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="titleLabel" destination="9Iw-KP-x5y" id="Kp6-mB-aCT"/>
                                     <outlet property="xTextField" destination="Buv-9l-mtX" id="pw3-P0-cfO"/>
@@ -282,6 +328,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             <connections>
+                                                <action selector="textFieldEditingDidChange:" destination="ICe-1n-fhd" eventType="editingChanged" id="xmf-p1-k6N"/>
                                                 <action selector="textFieldEditingEnd:" destination="ICe-1n-fhd" eventType="editingDidEnd" id="Ndk-du-MK6"/>
                                             </connections>
                                         </textField>
@@ -298,11 +345,13 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             <connections>
+                                                <action selector="textFieldEditingDidChange:" destination="ICe-1n-fhd" eventType="editingChanged" id="l8t-07-yyq"/>
                                                 <action selector="textFieldEditingEnd:" destination="ICe-1n-fhd" eventType="editingDidEnd" id="VcL-fs-H1U"/>
                                             </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="heightTextField" destination="3qC-KS-mD9" id="OcZ-Rq-WS4"/>
                                     <outlet property="titleLabel" destination="ENK-pe-5SO" id="lLQ-Xp-QXh"/>
@@ -336,6 +385,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             <connections>
+                                                <action selector="textFieldEditingDidChange:" destination="13J-B5-HD8" eventType="editingChanged" id="J1w-Cg-fzt"/>
                                                 <action selector="textFieldEditingEnd:" destination="13J-B5-HD8" eventType="editingDidEnd" id="MQr-po-zL0"/>
                                             </connections>
                                         </textField>
@@ -352,6 +402,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             <connections>
+                                                <action selector="textFieldEditingDidChange:" destination="13J-B5-HD8" eventType="editingChanged" id="b0q-6u-6Z9"/>
                                                 <action selector="textFieldEditingEnd:" destination="13J-B5-HD8" eventType="editingDidEnd" id="BsI-sg-nVW"/>
                                             </connections>
                                         </textField>
@@ -368,6 +419,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             <connections>
+                                                <action selector="textFieldEditingDidChange:" destination="13J-B5-HD8" eventType="editingChanged" id="927-ib-w4c"/>
                                                 <action selector="textFieldEditingEnd:" destination="13J-B5-HD8" eventType="editingDidEnd" id="Pwh-Fj-KlJ"/>
                                             </connections>
                                         </textField>
@@ -384,11 +436,13 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             <connections>
+                                                <action selector="textFieldEditingDidChange:" destination="13J-B5-HD8" eventType="editingChanged" id="gzH-vD-aDa"/>
                                                 <action selector="textFieldEditingEnd:" destination="13J-B5-HD8" eventType="editingDidEnd" id="vI4-gz-JVf"/>
                                             </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="heightTextField" destination="xhk-UQ-Cf5" id="9fD-Gp-aXO"/>
                                     <outlet property="titleLabel" destination="aJV-yX-YF0" id="d4Q-kc-MQm"/>
@@ -417,11 +471,13 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
+                                                <action selector="textFieldEditingDidChange:" destination="7wD-1W-ha4" eventType="editingChanged" id="388-x5-o7z"/>
                                                 <action selector="textFieldEditingEnd:" destination="7wD-1W-ha4" eventType="editingDidEnd" id="XcA-he-J3d"/>
                                             </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="textField" destination="ikN-XO-8bg" id="3ZM-1B-PIT"/>
                                     <outlet property="titleLabel" destination="8mR-o2-KAA" id="XnO-zi-GX2"/>
@@ -453,6 +509,7 @@
                                         </stepper>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="titleLabel" destination="zzg-nh-Qev" id="5Qa-cx-59S"/>
                                 </connections>
@@ -479,7 +536,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yFe-Ho-64Y">
                                 <rect key="frame" x="0.0" y="0.0" width="800" height="550"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="view" textLabel="WIO-sa-ONw" style="IBUITableViewCellStyleDefault" id="Zud-cq-nAl" customClass="HierarchyViewCell" customModule="XXLEditor" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="800" height="43.5"/>
@@ -497,6 +554,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -515,7 +573,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6KC-LB-6eV" firstAttribute="top" secondItem="yFe-Ho-64Y" secondAttribute="bottom" id="OeJ-eu-Nd8"/>
                             <constraint firstItem="6KC-LB-6eV" firstAttribute="leading" secondItem="kO1-Wz-Phw" secondAttribute="leading" id="YRV-QN-GOc"/>

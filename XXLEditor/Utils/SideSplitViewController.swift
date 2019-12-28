@@ -14,68 +14,100 @@ class SideSplitViewController: UIViewController {
     var rightViewController: UIViewController?
     
     @IBOutlet var containerView: UIView!
+    @IBOutlet var mainContainerView: UIView!
+    @IBOutlet var leftContainerView: UIView!
+    @IBOutlet var rightContainerView: UIView!
     @IBOutlet var leftBarButtonItem: UIBarButtonItem!
     @IBOutlet var rightBarButtonItem: UIBarButtonItem!
     
-    @IBInspectable var leftWidth: CGFloat = 0
-    @IBInspectable var rightWidth: CGFloat = 0
     @IBInspectable var collapsedColor: UIColor = UIColor.link
     @IBInspectable var expandedColor: UIColor = UIColor.label
     
     func set(mainViewController viewController: UIViewController, animated: Bool) {
-        if let oldVc = mainViewController {
-            removeChild(oldVc)
-        }
-        addChild(viewController, containedIn: containerView)
+        let oldVc = mainViewController
+        addChild(viewController, containedIn: mainContainerView)
         mainViewController = viewController
-        layoutChildren(animated: animated)
-    }
-    func set(leftViewController viewController: UIViewController?, animated: Bool) {
-        let offRect = CGRect(x: -leftWidth, y: 0, width: leftWidth, height: containerView.bounds.height)
-        if let oldVc = leftViewController {
-            removeChild(oldVc, animatingFrame: offRect, duration: animated ? 0.25 : 0)
+        UIView.animate(withDuration: animated ? 0.25 : 0, animations: {
+            self.layoutChildren()
+        }) { (finished) in
+            if let oldVc = oldVc {
+                self.removeChild(oldVc)
+            }
         }
+    }
+    
+    func removeLeftViewController(animated: Bool) {
+        if let oldVc = leftViewController {
+            let offRect = leftContainerView.bounds.offsetBy(dx: -leftContainerView.bounds.width, dy: 0)
+            UIView.animate(withDuration: animated ? 0.25 : 0, animations: {
+                self.rightContainerView.frame = offRect
+            }) { (finished) in
+                self.removeChild(oldVc)
+            }
+        }
+    }
+    
+    func set(leftViewController viewController: UIViewController?, animated: Bool) {
+        let oldVc = leftViewController
         if let viewController = viewController {
-            addChild(viewController, containedIn: containerView, frame: offRect)
+            addChild(viewController, containedIn: leftContainerView)
             leftBarButtonItem.tintColor = expandedColor
         }
         else {
             leftBarButtonItem.tintColor = collapsedColor
         }
         leftViewController = viewController
-        layoutChildren(animated: animated)
+        UIView.animate(withDuration: animated ? 0.25 : 0, animations: {
+            self.layoutChildren()
+        }) { (finished) in
+            if let oldVc = oldVc {
+                self.removeChild(oldVc)
+            }
+        }
     }
     func set(rightViewController viewController: UIViewController?, animated: Bool) {
-        let offRect = CGRect(x: containerView.bounds.width, y: 0, width: rightWidth, height: containerView.bounds.height)
-        if let oldVc = rightViewController {
-            removeChild(oldVc, animatingFrame: offRect, duration: animated ? 0.25 : 0)
-        }
+        let oldVc = rightViewController
         if let viewController = viewController {
-            addChild(viewController, containedIn: containerView, frame: offRect)
+            addChild(viewController, containedIn: rightContainerView)
             rightBarButtonItem.tintColor = expandedColor
         }
         else {
             rightBarButtonItem.tintColor = collapsedColor
         }
         rightViewController = viewController
-        layoutChildren(animated: animated)
-    }
-    func layoutChildren(animated: Bool) {
-        var rect = self.containerView.bounds
-        
-        UIView.animate(withDuration: animated ? 0.25 : 0) {
-            if let viewController = self.rightViewController {
-                viewController.view.frame = CGRect(x: rect.width - self.rightWidth, y: 0, width: self.rightWidth, height: rect.height)
-                rect = rect.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: self.rightWidth))
-            }
-            if let viewController = self.leftViewController {
-                viewController.view.frame = CGRect(x: 0, y: 0, width: self.leftWidth, height: rect.height)
-                rect = rect.inset(by: UIEdgeInsets(top: 0, left: self.leftWidth, bottom: 0, right: 0))
-            }
-            if let viewController = self.mainViewController {
-                viewController.view.frame = rect
+        UIView.animate(withDuration: animated ? 0.25 : 0, animations: {
+            self.layoutChildren()
+        }) { (finished) in
+            if let oldVc = oldVc {
+                self.removeChild(oldVc)
             }
         }
+    }
+    func layoutChildren() {
+        var rect = self.containerView.bounds
+        
+        if let viewController = self.rightViewController {
+            var frame = rightContainerView.frame
+            frame.origin.x = rect.width - rightContainerView.bounds.width
+            rightContainerView.frame = frame
+            viewController.view.frame = rightContainerView.bounds
+            rect = rect.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: rightContainerView.bounds.width))
+        }
+        else {
+            rightContainerView.frame = rightContainerView.bounds.offsetBy(dx: rect.width, dy: 0)
+        }
+        if let viewController = self.leftViewController {
+            var frame = leftContainerView.frame
+            frame.origin.x = 0
+            leftContainerView.frame = frame
+            viewController.view.frame = leftContainerView.bounds
+            rect = rect.inset(by: UIEdgeInsets(top: 0, left: leftContainerView.bounds.width, bottom: 0, right: 0))
+        }
+        else {
+            leftContainerView.frame = leftContainerView.bounds.offsetBy(dx: -leftContainerView.bounds.width, dy: 0)
+        }
+        
+        mainContainerView.frame = rect
     }
     
     @IBAction func toggleLeft(_ sender: Any?) {

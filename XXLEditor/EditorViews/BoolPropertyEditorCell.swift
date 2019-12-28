@@ -25,5 +25,4 @@ class BoolPropertyEditorCell: PropertyEditorCell {
             super.setValue(value)
         }
     }
-
 }
