@@ -11,15 +11,26 @@ import Foundation
 class PointPropertyEditorCell: PropertyEditorCell {
     @IBOutlet var xTextField: UITextField!
     @IBOutlet var yTextField: UITextField!
+    var dirty: Bool = false
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        xTextField.text = ""
+        yTextField.text = ""
+    }
+    
     @IBAction func textFieldEditingEnd(_ textField: UITextField) {
-        if let _ = textField.text {
+        if dirty, let _ = textField.text {
             setValueAndNotify(getPoint())
+            dirty = false
         }
+    }
+    @IBAction func textFieldEditingDidChange(_ textField: UITextField) {
+        dirty = true
     }
     
     override func setValue(_ value: Any) {

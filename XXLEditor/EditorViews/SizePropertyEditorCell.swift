@@ -11,15 +11,26 @@ import Foundation
 class SizePropertyEditorCell: PropertyEditorCell {
     @IBOutlet var widthTextField: UITextField!
     @IBOutlet var heightTextField: UITextField!
+    var dirty: Bool = false
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        widthTextField.text = ""
+        heightTextField.text = ""
+    }
+    
     @IBAction func textFieldEditingEnd(_ textField: UITextField) {
-        if let _ = textField.text {
+        if dirty, let _ = textField.text {
             setValueAndNotify(getSize())
+            dirty = false
         }
+    }
+    @IBAction func textFieldEditingDidChange(_ textField: UITextField) {
+        dirty = true
     }
     
     override func setValue(_ value: Any) {

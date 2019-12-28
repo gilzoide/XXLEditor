@@ -10,6 +10,7 @@ import UIKit
 
 class StringPropertyEditorCell: PropertyEditorCell {
     @IBOutlet var textField: UITextField!
+    var dirty: Bool = false
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -21,9 +22,13 @@ class StringPropertyEditorCell: PropertyEditorCell {
     }
     
     @IBAction func textFieldEditingEnd(_ textField: UITextField) {
-        if let text = textField.text {
+        if dirty, let text = textField.text {
             setValueAndNotify(text)
+            dirty = false
         }
+    }
+    @IBAction func textFieldEditingDidChange(_ textField: UITextField) {
+        dirty = true
     }
     
     override func setValue(_ value: Any) {

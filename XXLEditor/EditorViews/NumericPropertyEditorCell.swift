@@ -11,18 +11,28 @@ import UIKit
 class NumericPropertyEditorCell: PropertyEditorCell {
     @IBOutlet var textField: UITextField!
     @IBOutlet var stepper: UIStepper!
+    var dirty: Bool = false
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        textField.text = ""
     }
     
     @IBAction func stepperValueChanged(_ stepper: UIStepper) {
         setValueAndNotify(stepper.value)
     }
     @IBAction func textFieldEditingEnd(_ textField: UITextField) {
-        if let text = textField.text, let value = Double(text) {
+        if dirty, let text = textField.text, let value = Double(text) {
             setValueAndNotify(value)
+            dirty = false
         }
+    }
+    @IBAction func textFieldEditingDidChange(_ textField: UITextField) {
+        dirty = true
     }
     
     override func setValue(_ value: Any) {
